@@ -1,0 +1,33 @@
+﻿:root {
+    --nav-bar-khaki: #C3B694;
+    --nav-bar-ecru-white: #F9FAF2;
+}
+
+* {
+    font-family: 'Castoro', serif;
+}
+
+/* Colors */
+
+.bg-gold {
+    background-color: #C3B694;
+}
+
+.bg-cream {
+    background-color: #F9FAF2;
+}
+
+/* Overrides & Custom Classes */
+
+.pipe-seperator a::after {
+    content: "|";
+    padding-left: 1em; 
+}
+
+.hero-image {
+    position: relative; 
+    height: 500px; 
+    overflow: hidden; 
+    background: url(/images/home_banner_2048x500.jpg) no-repeat center; 
+    background-size: cover;
+}
