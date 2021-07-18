@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WindhelmNordicBakery.Data;
 
 namespace WindhelmNordicBakery.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210718045407_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,23 +237,6 @@ namespace WindhelmNordicBakery.Data.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            CategoryName = "Gifts"
-                        },
-                        new
-                        {
-                            CategoryId = 2,
-                            CategoryName = "Breads"
-                        },
-                        new
-                        {
-                            CategoryId = 3,
-                            CategoryName = "Cakes"
-                        });
                 });
 
             modelBuilder.Entity("WindhelmNordicBakery.Models.Product", b =>
@@ -296,71 +281,6 @@ namespace WindhelmNordicBakery.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AllergyInformation = "",
-                            CategoryId = 1,
-                            ImageFile = "cookbook.jpg",
-                            ImageThumbnailFile = "cookbook.jpg",
-                            InStock = true,
-                            LongDescription = "Detailed instructions to bring many of our legendary goods home to your kitchen!",
-                            Name = "Cookbook",
-                            Popularity = 0,
-                            Price = 24.99m,
-                            ShortDescription = "Our legendary recipe book!"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            ImageFile = "sourdough.jpg",
-                            ImageThumbnailFile = "sourdough.jpg",
-                            InStock = true,
-                            LongDescription = " Curabitur ullamcorper nulla non enim hendrerit aliquam. Aenean luctus viverra ante a placerat. Nam mollis consectetur varius. Sed eleifend facilisis viverra. Mauris in urna eget mi ullamcorper elementum. Mauris ultrices ante mauris, at congue dui pulvinar faucibus. Nunc eget est a sem blandit placerat quis quis nisl. Nullam condimentum quis eros blandit rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et libero nec enim sodales fermentum at a libero.",
-                            Name = "Sourdough",
-                            Popularity = 0,
-                            Price = 4.99m,
-                            ShortDescription = "Lorem Ipsum"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 2,
-                            ImageFile = "VikingRye.jpg",
-                            ImageThumbnailFile = "VikingRye.jpg",
-                            InStock = true,
-                            LongDescription = " Curabitur ullamcorper nulla non enim hendrerit aliquam. Aenean luctus viverra ante a placerat. Nam mollis consectetur varius. Sed eleifend facilisis viverra. Mauris in urna eget mi ullamcorper elementum. Mauris ultrices ante mauris, at congue dui pulvinar faucibus. Nunc eget est a sem blandit placerat quis quis nisl. Nullam condimentum quis eros blandit rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et libero nec enim sodales fermentum at a libero.",
-                            Name = "Viking Rye Bread",
-                            Popularity = 1,
-                            Price = 2.99m,
-                            ShortDescription = "Lorem Ipsum"
-                        });
-                });
-
-            modelBuilder.Entity("WindhelmNordicBakery.Models.ShoppingCartItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ShoppingCartId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -423,15 +343,6 @@ namespace WindhelmNordicBakery.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("WindhelmNordicBakery.Models.ShoppingCartItem", b =>
-                {
-                    b.HasOne("WindhelmNordicBakery.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("WindhelmNordicBakery.Models.Category", b =>

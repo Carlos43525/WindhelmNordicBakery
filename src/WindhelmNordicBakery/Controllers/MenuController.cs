@@ -17,13 +17,22 @@ namespace WindhelmNordicBakery.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult Products()
+        public ViewResult ProductList()
         {
             MenuProductsViewModel menuProductsViewModel = new MenuProductsViewModel();
             menuProductsViewModel.Products = _productRepository.AllProducts;
 
             menuProductsViewModel.CurrentCategory = "All Products";
             return View(menuProductsViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+            if (product == null)
+                return NotFound();
+
+            return View(product);
         }
     }
 }

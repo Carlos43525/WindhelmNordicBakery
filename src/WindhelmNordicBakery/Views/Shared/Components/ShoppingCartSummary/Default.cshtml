@@ -1,0 +1,9 @@
+﻿@model ShoppingCartViewModel
+
+
+<li class="nav-item mr-4">
+    <a class="nav-link text-white" asp-area="" asp-controller="ShoppingCart" asp-action="Index">
+        @Model.ShoppingCartTotal.ToString("c")<i class="fas fa-shopping-cart ml-3"></i>
+        <span id="cart-status">@Model.ShoppingCart.ShoppingCartItems.Count</span>
+    </a>
+</li>

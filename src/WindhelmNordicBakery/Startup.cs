@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using WindhelmNordicBakery.Data;
 using WindhelmNordicBakery.Models;
 using WindhelmNordicBakery.Models.Mock;
+using WindhelmNordicBakery.Models.Repository;
 
 namespace WindhelmNordicBakery
 {
@@ -29,8 +30,11 @@ namespace WindhelmNordicBakery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductRepository, MockProductRepository>();
-            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSession(); 
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
@@ -60,6 +64,7 @@ namespace WindhelmNordicBakery
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession(); 
 
             app.UseRouting();
 

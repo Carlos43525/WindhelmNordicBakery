@@ -8,6 +8,7 @@ namespace WindhelmNordicBakery.ViewModels
 {
     public class MenuProductsViewModel
     {
+        public int ProductId { get; set; }
         public IEnumerable<Product> Products { get; set; }
         public string CurrentCategory { get; set; }
     }
