@@ -167,5 +167,5 @@ C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\Win
 C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\ref\WindhelmNordicBakery.dll
 C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\WindhelmNordicBakery.pdb
 C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\WindhelmNordicBakery.genruntimeconfig.cache
-C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\WindhelmNordicBakery.csproj.AssemblyReference.cache
 C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\Razor\Views\Menu\Products.cshtml.g.cs
+C:\Users\carlo\Software\Working\Windhelm Nordic Bakery\_WindhelmNordicBakery\WindhelmNordicBakery\src\WindhelmNordicBakery\obj\Debug\net5.0\WindhelmNordicBakery.csproj.AssemblyReference.cache

@@ -4,6 +4,7 @@
     ViewData["Title"] = "Products";
 }
 
+<div class="container">
 <h1>@Model.CurrentCategory</h1>
 @foreach (var product in Model.Products)
 {
@@ -13,3 +14,4 @@
         <h4>@product.Category.CategoryName</h4>
     </div>
 }
+</div>

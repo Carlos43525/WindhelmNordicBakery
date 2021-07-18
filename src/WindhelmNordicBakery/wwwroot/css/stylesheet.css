@@ -1,6 +1,14 @@
-﻿:root {
-    --nav-bar-khaki: #C3B694;
-    --nav-bar-ecru-white: #F9FAF2;
+﻿@font-face {
+    font-family: Lovhart;
+    src: url(/fonts/LovheartPersonalUseItalic-Yz0x4.ttf);
+}
+
+:root {
+    /* Hex codes are directly used throught document in some places 
+       due to difficulties in overriding bootstrap colors with variables. */
+    --gold: #DECBA7;
+    --gold-secondary: #a07b40;
+    --cream: #F9FAF2;
 }
 
 * {
@@ -10,24 +18,192 @@
 /* Colors */
 
 .bg-gold {
-    background-color: #C3B694;
+    background-color: #DECBA7;
 }
 
 .bg-cream {
     background-color: #F9FAF2;
 }
 
-/* Overrides & Custom Classes */
+
+/* _Layout */
+
+
+.navbar-toggler {
+    border: 0px solid transparent;
+}
 
 .pipe-seperator a::after {
     content: "|";
-    padding-left: 1em; 
+    padding-left: 1em;
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: #F9FAF2;
+}
+
+.logo-pos {
+    position: absolute;
+}
+
+/* Home*/
+
+
+.banner-font {
+    font-family: Lovhart, sans-serif;
+    font-size: 250px;
 }
 
 .hero-image {
     position: relative; 
     height: 500px; 
     overflow: hidden; 
-    background: url(/images/home_banner_2048x500.jpg) no-repeat center; 
+    background: url(/images/bread-bannerphoto-1534620808146-d33bb39128b2.jpg) no-repeat center;
     background-size: cover;
+}
+
+.btn {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600; 
+}
+
+.btn-dark {
+    border-radius: 0; 
+}
+
+.btn--gold--large {
+    font-size: 16px;
+    letter-spacing: 0.2rem; 
+    padding: 1em 1.5em; 
+}
+
+.btn-gold {
+    color: #fff !important;
+    background-color: var(--gold);
+    border-radius: 0;
+    border: 3px solid var(--gold);
+    transition: ease 0.3s;
+}
+
+.btn-white {
+    color: var(--gold) !important;
+    background-color: #fff;
+    font-size: 16px;
+    transition: ease 0.3s;
+    border-radius: 0;
+    padding: 0.6em 5em;
+    letter-spacing: 0.2em;
+}
+
+.btn-gold:hover, 
+.btn-white:hover {
+    opacity: 75%;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.text-grey {
+    opacity: 50%; 
+    line-height: 1.6; 
+}
+
+.bg-black {
+    background-color: #000; 
+}
+
+.text-gold {
+    color: #a07b40;
+}
+
+.menu-quicklinks-header {
+    font-size: 42px; 
+}
+
+.menu-quicklinks {
+   width: 400px;
+}
+
+.menu-quicklinks-text-box {
+    position: absolute; 
+}
+
+.hr-gold {
+    position: relative;
+    background-color: var(--gold);
+}
+
+.hr--gold--header {
+    position: relative;
+    bottom: 15px;
+    height: 1.5px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.hr--gold--divider {
+    height: 1px;
+    width: auto; 
+}
+
+.email-block {
+    height: 120px; 
+    width : 100%; 
+}
+
+.footer-border {
+    padding-bottom: 20px; 
+    border-bottom: 2px solid var(--gold);
+}
+
+.footer-text {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 985px) {
+    .menu-quicklinks-header {
+        font-size: 32px;
+    }
+
+    .btn-white {
+        padding: 0.3em 2.5em;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    a.dropdown-toggle {
+        display: none;
+    }
+
+    .banner-font {
+        margin-top: 5rem !important;
+        font-size: 150px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .banner-font {
+        margin-top: 8rem !important;
+        font-size: 110px; 
+    }
+
+    .menu-quicklinks {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
 }
