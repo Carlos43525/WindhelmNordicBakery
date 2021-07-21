@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WindhelmNordicBakery.Data;
 using WindhelmNordicBakery.Models;
+using WindhelmNordicBakery.Models.Interfaces;
 using WindhelmNordicBakery.Models.Mock;
 using WindhelmNordicBakery.Models.Repository;
 
@@ -32,7 +33,9 @@ namespace WindhelmNordicBakery
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>(); 
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+
             services.AddHttpContextAccessor();
             services.AddSession(); 
 
